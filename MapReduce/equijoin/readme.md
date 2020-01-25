@@ -2,7 +2,11 @@ EquiJoin on the records present in the table.
 For example:
 
 There are following two records:
+
 R, 3, Sal, Maglite, Nutley, 555-6905
+
+and
+
 S, 3, 24000, 5000, part1
 
 The output of Map reduce can be 
