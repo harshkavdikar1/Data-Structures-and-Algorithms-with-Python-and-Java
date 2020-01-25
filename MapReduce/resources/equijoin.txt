@@ -1,0 +1,14 @@
+R, 2, Don, Larson, Newark, 555-3221
+S, 1, 33000, 10000, part1
+S, 2, 18000, 2000, part1
+R, 3, Sal, Maglite, Nutley, 555-6905
+S, 3, 24000, 5000, part1
+S, 4, 22000, 7000, part1
+R, 4, Bob, Turley, Passaic, 555-8908
+S, 2, 20000, 1800, part1
+R, 3, Harsh, Dag, Tempe, 555-3243
+R, 6, Martin, Atk, NY, 555-2322
+S, 8, 22112, 2313, part4
+R, 6, Ker, Las, CY, 555-7829
+S, 8, 47551, 8458, part7
+R, 7, Los, Pqr, TN, 555-9990
