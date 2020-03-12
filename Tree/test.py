@@ -10,6 +10,9 @@ class TreeNode(object):
 
 def form_binary_tree_from_list(A):
 
+    if not A:
+        return None
+
     root = TreeNode(A[0])
     Q = deque([root])
     i = 1
@@ -50,6 +53,7 @@ def insert_into_bst(root, x):
 
 def form_binary_search_tree_from_list(A):
 
+    if not A: return None
     root = TreeNode(A[0])
     for x in A[1:]:
         insert_into_bst(root, x)
@@ -73,8 +77,10 @@ def test_LC94():
     obj = Solution()
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
-        if obj.inorderTraversal(root) == results[i]: passed(i+1)
-        else: failed(i+1)
+        if obj.inorderTraversal(root) == results[i]:
+            passed(i+1)
+        else:
+            failed(i+1)
 
 
 def test_LC98():
@@ -254,28 +260,104 @@ def test_LC144():
 
     from preorder_traversal_LC144 import Solution
     print("Checking Preorder Traversal of Binary Tree.......")
-    test_cases = [[1,None,2,3,4,None,5,None,6,7,4,3,None,None,9,0],
-                [2,4,6,None,5,None,6,7,8,9,0]]
-    results = [[1,2,3,5,7,9,4,0,4,6,3], [2,4,5,7,8,6,6,9,0]]
+    test_cases = [[1, None, 2, 3, 4, None, 5, None, 6, 7, 4, 3, None, None, 9, 0],
+                  [2, 4, 6, None, 5, None, 6, 7, 8, 9, 0]]
+    results = [[1, 2, 3, 5, 7, 9, 4, 0, 4, 6, 3], [2, 4, 5, 7, 8, 6, 6, 9, 0]]
     obj = Solution()
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
-        if obj.preorderTraversal(root) == results[i]: passed(i+1)
-        else: failed(i+1)
+        if obj.preorderTraversal(root) == results[i]:
+            passed(i+1)
+        else:
+            failed(i+1)
 
 
 def test_LC145():
 
     from postorder_traversal_LC145 import Solution
     print("Checking Postorder Traversal of Binary Tree.......")
-    test_cases = [[1,None,2,3,4,None,4,7,8,9,None,None,10,11,None,23],
-                [2,4,6,None,5,None,6,7,8,9,0]]
-    results = [[23,9,4,3,10,7,11,8,4,2,1], [7,8,5,4,9,0,6,6,2]]
+    test_cases = [[1, None, 2, 3, 4, None, 4, 7, 8, 9, None, None, 10, 11, None, 23],
+                  [2, 4, 6, None, 5, None, 6, 7, 8, 9, 0]]
+    results = [[23, 9, 4, 3, 10, 7, 11, 8, 4, 2, 1],
+               [7, 8, 5, 4, 9, 0, 6, 6, 2]]
     obj = Solution()
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
-        if obj.postorderTraversal(root) == results[i]: passed(i+1)
-        else: failed(i+1)
+        if obj.postorderTraversal(root) == results[i]:
+            passed(i+1)
+        else:
+            failed(i+1)
+
+
+def test_LC199():
+
+    from binary_tree_right_side_view_LC199 import Solution
+    print("Checking Right Side View of Binary Tree.......")
+    test_cases = [[1, 2, 3, None, 5, None, 4, 4, 5, None, None, 5, 6, None, None, 9],
+                  [2, 4, 6, None, 5, None, 6, 7, 8, 9, 0, 11]]
+    results = [[1, 3, 4, 5, 6, 9], [2, 6, 6, 0, 11]]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.rightSideView(root) == results[i]:
+            passed(i+1)
+        else:
+            failed(i+1)
+
+
+def test_LC222():
+
+    from count_complete_tree_node_LC222 import Solution
+    print("Checking count of complete nodes of Binary Tree.......")
+    test_cases = [[1, 2, 3, 5, 4, 4, 5, 5, 6, 9], [],
+                  [2, 4, 6, 5, 6, 7, 8, 9]]
+    results = [10, 0, 8]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.countNodes(root) == results[i]:
+            passed(i+1)
+        else:
+            failed(i+1)
+
+
+def test_LC226():
+
+    from invert_tree_LC226 import Solution
+    from preorder_traversal_LC144 import Solution as preorder_traversal
+    print("Checking Invert of Binary Tree.......")
+    test_cases = [[4,2,7,1,3,6,9,None,None,4,3,None,5,None,9,1,2,3], [],
+                  [2, 4, 6, 5, 6, 7, 8, 9]]
+    results = [[4,7,2,9,6,3,1,9,None,5,None,3,4,None,None,None,None,None,None,None,3,2,1], None, 
+                [2,6,4,8,7,6,5,None,None,None,None,None,None,None,9]]
+    obj = Solution()
+    obj2 = preorder_traversal()
+
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        result = form_binary_tree_from_list(results[i])
+        if obj2.preorderTraversal(obj.invertTree(root)) == obj2.preorderTraversal(result):
+            passed(i+1)
+        else:
+            failed(i+1)
+
+
+def test_LC230():
+
+    from kth_smallest_element_bst_LC230 import Solution
+    print("Checking kth smallest elements in Binary Search Tree.......")
+    test_cases = [[[3,1,4,None,2],2],
+                 [[5,3,6,2,4,None,None,1],3]]
+    results = [2, 3]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i][0])
+        if obj.kthSmallest(root, test_cases[i][1]) == results[i]:
+            passed(i+1)
+        else:
+            failed(i+1)
+
+
 
 if __name__ == '__main__':
 
@@ -290,5 +372,9 @@ if __name__ == '__main__':
     # test_LC112()
     # test_LC113()
     # test_LC114()
-    test_LC144()
-    test_LC145()
+    # test_LC144()
+    # test_LC145()
+    # test_LC199()
+    # test_LC222()
+    # test_LC226()
+    # test_LC230()
