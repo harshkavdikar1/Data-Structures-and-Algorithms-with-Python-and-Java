@@ -1,7 +1,11 @@
+'''
+@author: Harsh
+'''
 from collections import deque
 
 
 class TreeNode(object):
+
     def __init__(self, x):
         self.val = x
         self.left = None
@@ -78,9 +82,9 @@ def test_LC94():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.inorderTraversal(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC98():
@@ -93,9 +97,9 @@ def test_LC98():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.isValidBST(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC100():
@@ -111,9 +115,9 @@ def test_LC100():
         root1 = form_binary_tree_from_list(test_cases[i][0])
         root2 = form_binary_tree_from_list(test_cases[i][1])
         if obj.isSameTree(root1, root2) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC101():
@@ -127,9 +131,9 @@ def test_LC101():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.isSymmetric(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC102():
@@ -144,9 +148,9 @@ def test_LC102():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.levelOrder(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC103():
@@ -162,9 +166,9 @@ def test_LC103():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.zigzagLevelOrder(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC104():
@@ -179,9 +183,9 @@ def test_LC104():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.maxDepth(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC110():
@@ -196,9 +200,9 @@ def test_LC110():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.isBalanced(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC112():
@@ -213,9 +217,9 @@ def test_LC112():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i][0])
         if obj.hasPathSum(root, test_cases[i][1]) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC113():
@@ -230,9 +234,9 @@ def test_LC113():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i][0])
         if obj.pathSum(root, test_cases[i][1]) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC114():
@@ -251,9 +255,9 @@ def test_LC114():
         root = form_binary_tree_from_list(test_cases[i])
         test_case = obj2.inorderTraversal(obj.flatten(root))
         if results[i] == test_case:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC144():
@@ -267,9 +271,9 @@ def test_LC144():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.preorderTraversal(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC145():
@@ -284,9 +288,9 @@ def test_LC145():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.postorderTraversal(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC199():
@@ -300,9 +304,9 @@ def test_LC199():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.rightSideView(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC222():
@@ -316,9 +320,9 @@ def test_LC222():
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i])
         if obj.countNodes(root) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC226():
@@ -326,10 +330,10 @@ def test_LC226():
     from invert_tree_LC226 import Solution
     from preorder_traversal_LC144 import Solution as preorder_traversal
     print("Checking Invert of Binary Tree.......")
-    test_cases = [[4,2,7,1,3,6,9,None,None,4,3,None,5,None,9,1,2,3], [],
+    test_cases = [[4, 2, 7, 1, 3, 6, 9, None, None, 4, 3, None, 5, None, 9, 1, 2, 3], [],
                   [2, 4, 6, 5, 6, 7, 8, 9]]
-    results = [[4,7,2,9,6,3,1,9,None,5,None,3,4,None,None,None,None,None,None,None,3,2,1], None, 
-                [2,6,4,8,7,6,5,None,None,None,None,None,None,None,9]]
+    results = [[4, 7, 2, 9, 6, 3, 1, 9, None, 5, None, 3, 4, None, None, None, None, None, None, None, 3, 2, 1], None,
+                [2, 6, 4, 8, 7, 6, 5, None, None, None, None, None, None, None, 9]]
     obj = Solution()
     obj2 = preorder_traversal()
 
@@ -337,27 +341,105 @@ def test_LC226():
         root = form_binary_tree_from_list(test_cases[i])
         result = form_binary_tree_from_list(results[i])
         if obj2.preorderTraversal(obj.invertTree(root)) == obj2.preorderTraversal(result):
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
 def test_LC230():
 
     from kth_smallest_element_bst_LC230 import Solution
     print("Checking kth smallest elements in Binary Search Tree.......")
-    test_cases = [[[3,1,4,None,2],2],
-                 [[5,3,6,2,4,None,None,1],3]]
+    test_cases = [[[3, 1, 4, None, 2], 2],
+                 [[5, 3, 6, 2, 4, None, None, 1], 3]]
     results = [2, 3]
     obj = Solution()
     for i in range(len(test_cases)):
         root = form_binary_tree_from_list(test_cases[i][0])
         if obj.kthSmallest(root, test_cases[i][1]) == results[i]:
-            passed(i+1)
+            passed(i + 1)
         else:
-            failed(i+1)
+            failed(i + 1)
 
 
+def test_LC236():
+
+    from lowest_common_ancestor_LC236 import Solution
+    print("Checking lowest common ancestor in Binary Search Tree.......")
+    test_cases = [[[3, 5, 1, 6, 2, 0, 8, None, None, 7, 4], 5, 1],
+                 [[3, 5, 1, 6, 2, 0, 8, None, None, 7, 4], 6, 4]]
+    results = [3, 5]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i][0])
+        if obj.lowestCommonAncestor(root, test_cases[i][1], test_cases[i][2]).val == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
+def test_LC543():
+
+    from diameter_binary_tree_LC543 import Solution
+    print("Validating Diameter of Binary Tree.......")
+    test_cases = [ 
+                    [3, 5, 1, 6, 2, 0, 8, None , None, 7, 4],
+                    [1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,2],
+                    [], [1]
+                ]
+    results = [5, 11, 0, 0]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.diameterOfBinaryTree(root) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
+def test_LC572():
+
+    from is_sub_tree_LC572 import Solution
+    print("Checking if one Binary Tree is subtee of another Binary Tree.......")
+    test_cases = [ 
+                    [[3,4,5,1,2], [4,1,2]],
+                    [[1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,None,1,2],
+                    [1,None,1,None,1,None,1,None,1,None,1,2]]
+                ]
+    results = [True, True]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root1 = form_binary_tree_from_list(test_cases[i][0])
+        root2 = form_binary_tree_from_list(test_cases[i][1])
+        if obj.isSubtree(root1, root2) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
+def test_LC951():
+
+    from flip_equivalent_binary_tree_LC951 import Solution
+    print("Checking if one Binary Tree is subtee of another Binary Tree.......")
+    test_cases = [ 
+                    [   
+                        [1,2,3,4,5,6,None,None,None,7,8],
+                        [1,3,2,None,6,4,5,None,None,None,None,8,7]
+                    ],
+                    [   
+                        [0,2,1,4,None,3,5,None,None,6,7],
+                        [0,2,1,4,None,3,5,None,None,None,6,7]
+                    ]
+                ]
+    results = [True, False]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root1 = form_binary_tree_from_list(test_cases[i][0])
+        root2 = form_binary_tree_from_list(test_cases[i][1])
+        if obj.flipEquiv(root1, root2) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
 
 if __name__ == '__main__':
 
@@ -378,3 +460,7 @@ if __name__ == '__main__':
     # test_LC222()
     # test_LC226()
     # test_LC230()
+    # test_LC236()
+    # test_LC543()
+    # test_LC572()
+    test_LC951()
