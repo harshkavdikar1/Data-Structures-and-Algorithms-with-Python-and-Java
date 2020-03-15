@@ -102,6 +102,25 @@ def test_LC98():
             failed(i + 1)
 
 
+def test_LC99():
+
+    from recover_binary_tree_LC99 import Solution
+    from inorder_traversal_LC94 import Solution as IT
+    print("Validating recovered Binary Tree.......")
+    test_cases = [[1,3,None,None,2], [3,1,4,None,None,2]]
+    results = [[3,1,None,None,2], [2,1,4,None,None,3]]
+    obj = Solution()
+    obj2 = IT()
+
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        test = form_binary_tree_from_list(results[i])
+        if obj2.inorderTraversal(obj.recoverTree(root)) == obj2.inorderTraversal(test):
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 def test_LC100():
 
     from same_tree_LC100 import Solution
@@ -378,6 +397,25 @@ def test_LC236():
             failed(i + 1)
 
 
+def test_LC508():
+
+    from most_frequent_subtree_sum_LC508 import Solution
+    print("Checking Completeness of Binary Tree.......")
+    test_cases = [ 
+                    [5,2,-3],
+                    [5,2,-3,1,5,4,3,2,6,7,4,3,1,4,5,3,4],
+                    [], [1]
+                ]
+    results = [[2, -3, 4], [4], None, [1]]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.findFrequentTreeSum(root) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 def test_LC543():
 
     from diameter_binary_tree_LC543 import Solution
@@ -441,10 +479,50 @@ def test_LC951():
         else:
             failed(i + 1)
 
+
+def test_LC958():
+
+    from check_completeness_binary_tree_LC958 import Solution
+    print("Checking Completeness of Binary Tree.......")
+    test_cases = [ 
+                    [1,2,3,4,5,None,7],
+                    [1,2,3,4,5,6],
+                    [], [1]
+                ]
+    results = [False, True, True, True]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.isCompleteTree(root) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
+def test_LC1026():
+
+    from max_diff_ancestor_node_LC1026 import Solution
+    print("Checking Completeness of Binary Tree.......")
+    test_cases = [ 
+                    [8,3,10,1,6,None,14,None,None,4,7,13],
+                    [1,None,2,None,0,3],
+                    [0,None,1], [1]
+                ]
+    results = [7, 3, 1, 0]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.maxAncestorDiff(root) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 if __name__ == '__main__':
 
     # test_LC94()
     # test_LC98()
+    # test_LC99()
     # test_LC100()
     # test_LC101()
     # test_LC102()
@@ -461,6 +539,9 @@ if __name__ == '__main__':
     # test_LC226()
     # test_LC230()
     # test_LC236()
+    # test_LC508()
     # test_LC543()
     # test_LC572()
-    test_LC951()
+    # test_LC951()
+    # test_LC958()
+    # test_LC1026()

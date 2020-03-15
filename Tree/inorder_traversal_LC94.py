@@ -12,6 +12,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+
+        # Recursive
         def dfs(root, res):
             if not root:
                 return
@@ -21,3 +23,16 @@ class Solution(object):
         res = []
         dfs(root, res)
         return res
+
+        # Iterative
+        stack = []
+        res = []
+        while True:
+            while root:
+                stack.append(root)
+                root = root.left
+            if not stack:
+                return res
+            node = stack.pop(-1)
+            res.append(node.val)
+            root = node.right

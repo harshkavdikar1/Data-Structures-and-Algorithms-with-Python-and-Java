@@ -23,4 +23,14 @@ class Solution(object):
         return res
 
     def iterativePreorderTraversal(self, root):
-        pass
+        stack = []
+        res = []
+        while True:
+            while root:
+                res.append(root.val)
+                stack.append(root)
+                root = root.left
+            if not stack:
+                return res
+            node = stack.pop(-1)
+            root = node.right
