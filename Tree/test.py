@@ -258,6 +258,22 @@ def test_LC113():
             failed(i + 1)
 
 
+def test_LC124():
+
+    from binary_tree_max_path_LC124 import Solution
+    print("Validating Binary Tree Path Sums.......")
+    test_cases = [[1,2,3], [-10,9,20,None,None,15,7]]
+    results = [6, 42]
+    obj = Solution()
+
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.maxPathSum(root) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 def test_LC114():
 
     from flatten_binary_tree_to_linked_list_LC114 import Solution
@@ -397,6 +413,23 @@ def test_LC236():
             failed(i + 1)
 
 
+def test_LC297():
+
+    from serilize_deserialize_binary_tree_LC297 import Codec
+    from inorder_traversal_LC94 import Solution
+    print("Checking serialize deserialize value of Binary Tree.......")
+    test_cases = [[1,2,3,None,None,4,5], [], [1], [1,None,2,None,3,4,5,3,None]]
+    obj = Codec()
+    obj2 = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        test = obj.serialize(root)
+        if obj2.inorderTraversal(obj.deserialize(test)) == obj2.inorderTraversal(root):
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 def test_LC508():
 
     from most_frequent_subtree_sum_LC508 import Solution
@@ -455,6 +488,28 @@ def test_LC572():
             failed(i + 1)
 
 
+def test_LC814():
+
+    from binary_tree_pruning_LC814 import Solution
+    from inorder_traversal_LC94 import Solution as IT
+    print("Checking Cameras in Binary Tree.......")
+    test_cases = [ 
+                    [1,1,0,1,1,0,1,0],
+                    [1,0,1,0,0,0,1],
+                    [1,None,0,0,1]
+                ]
+    results = [[1,1,0,1,1,None,1], [1,None,1,None,1], [1,None,0,None,1]]
+    obj = Solution()
+    obj2 = IT()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        test = form_binary_tree_from_list(results[i])
+        if obj2.inorderTraversal(obj.pruneTree(root)) == obj2.inorderTraversal(test):
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 def test_LC951():
 
     from flip_equivalent_binary_tree_LC951 import Solution
@@ -499,6 +554,25 @@ def test_LC958():
             failed(i + 1)
 
 
+def test_LC968():
+
+    from binary_tree_cameras_LC968 import Solution
+    print("Checking Cameras in Binary Tree.......")
+    test_cases = [ 
+                    [0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,None,0,None,0,None,0,0,None,None,0,0,0,None,None,0,0,None,None,0],
+                    [], [1]
+                ]
+    results = [4, 5, 0, 1]
+    obj = Solution()
+    for i in range(len(test_cases)):
+        root = form_binary_tree_from_list(test_cases[i])
+        if obj.minCameraCover(root) == results[i]:
+            passed(i + 1)
+        else:
+            failed(i + 1)
+
+
 def test_LC1026():
 
     from max_diff_ancestor_node_LC1026 import Solution
@@ -532,6 +606,7 @@ if __name__ == '__main__':
     # test_LC112()
     # test_LC113()
     # test_LC114()
+    # test_LC124()
     # test_LC144()
     # test_LC145()
     # test_LC199()
@@ -539,9 +614,12 @@ if __name__ == '__main__':
     # test_LC226()
     # test_LC230()
     # test_LC236()
+    # test_LC297()
     # test_LC508()
     # test_LC543()
     # test_LC572()
+    # test_LC814()
     # test_LC951()
     # test_LC958()
+    # test_LC968()
     # test_LC1026()
